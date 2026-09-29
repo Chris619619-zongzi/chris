@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f7a52" />
+  <title>识鸟 BirdID · 看图识鸟小课堂</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ========== 答题页 ========== -->
+    <section id="screen-quiz" class="screen is-active">
+      <header class="quiz-topbar">
+        <div class="progress-wrap">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span class="progress-text" id="progressText">1 / 14</span>
+        </div>
+        <div class="streak-badge" id="streakBadge" title="连续答对">
+          <span class="streak-flame">🔥</span>
+          <span id="streakNum">0</span>
+        </div>
+      </header>
+
+      <div class="photo-frame">
+        <div class="photo-loading" id="photoLoading"><span></span></div>
+        <img id="quizImg" alt="这是什么鸟？" />
+      </div>
+
+      <h2 class="quiz-question">这只鸟叫什么？</h2>
+
+      <div class="options-grid" id="optionsGrid"></div>
+
+      <div class="feedback-bar" id="feedbackBar" aria-live="polite"></div>
+
+      <button class="cta-btn" id="toCardBtn" type="button" hidden>
+        认识一下 <span class="cta-arrow">→</span>
+      </button>
+    </section>
+
+    <!-- ========== 鸟类名片页 ========== -->
+    <section id="screen-card" class="screen">
+      <div class="card-scroll" id="cardScroll"></div>
+      <div class="card-bottombar">
+        <button class="cta-btn" id="nextBtn" type="button">
+          下一只鸟 <span class="cta-arrow">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ========== 本轮结算页 ========== -->
+    <section id="screen-summary" class="screen">
+      <div class="summary-wrap" id="summaryWrap"></div>
+    </section>
+
+  </div>
+
+  <script src="birds-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
